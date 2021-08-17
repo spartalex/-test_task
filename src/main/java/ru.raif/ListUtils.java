@@ -18,11 +18,7 @@ public class ListUtils {
 
         Map<String, Integer> wordsCountMap = new TreeMap();
         for (String word : list) {
-            if (wordsCountMap.containsKey(word)) {
-                wordsCountMap.put(word, wordsCountMap.get(word) + 1);
-            } else {
-                wordsCountMap.put(word, 1);
-            }
+            wordsCountMap.put(word, wordsCountMap.getOrDefault(word, 0) + 1);
         }
         System.out.println(wordsCountMap);
         return wordsCountMap;
